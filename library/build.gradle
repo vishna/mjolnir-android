@@ -13,7 +13,7 @@ buildscript {
 }
 
 apply plugin: 'android-library'
-apply plugin: 'android-test'
+//apply plugin: 'android-test'
 
 dependencies {
     repositories {
@@ -35,9 +35,9 @@ dependencies {
     compile 'com.squareup:tape:1.2.0'
     compile 'com.esotericsoftware.kryo:kryo:2.20'
 
-    testCompile 'junit:junit:4.10'
-    testCompile 'org.robolectric:robolectric:2.1.+'
-    testCompile 'com.squareup:fest-android:1.0.+'
+    //testCompile 'junit:junit:4.10'
+    //testCompile 'org.robolectric:robolectric:2.1.+'
+    //testCompile 'com.squareup:fest-android:1.0.+'
 }
 
 task generateSources {
