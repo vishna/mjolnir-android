@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class ListStorageRequestExecutor {
 
-   private final static String META_LIST_NAME = "ListStorageRequestExecutor.META_LIST_NAME";
+   public final static String META_LIST_NAME = "ListStorageRequestExecutor.META_LIST_NAME";
 
    public Storage storage;
    public Storage.List list;
