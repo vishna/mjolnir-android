@@ -7,7 +7,7 @@ buildscript {
     }
 }
 
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
 //apply plugin: 'android-test'
 
 dependencies {
@@ -51,6 +51,7 @@ task generateSources {
 android {
     compileSdkVersion project.ver.compileSdk
     buildToolsVersion project.ver.buildTools
+    //minSdkVersion project.ver.minSdk
 
     lintOptions {
         abortOnError false
