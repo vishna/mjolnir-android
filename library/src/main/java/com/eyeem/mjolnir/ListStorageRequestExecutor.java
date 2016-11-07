@@ -82,11 +82,13 @@ public class ListStorageRequestExecutor {
    }
 
    public final static String FORCE_FETCH_FRONT = "forceFetchFront";
+   public final static String REFRESH_KEY = "refreshKey";
    public final static String EXHAUSTED = "exhausted";
 
-   public static HashMap<String, String> forceFrontFetch() {
+   public static HashMap<String, String> forceFrontFetch(String key) {
       HashMap<String, String> params = new HashMap<String, String>();
       params.put(FORCE_FETCH_FRONT, "true");
+      params.put(REFRESH_KEY, key);
       return params;
    }
 
