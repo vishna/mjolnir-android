@@ -71,7 +71,8 @@ public class SyncClient {
 
    public String raw() throws Exception {
       HttpURLConnection connection = buildConnection();
-      if (rb.method == Request.Method.PUT || rb.method == Request.Method.POST) {
+      if (rb.method == Request.Method.PUT || rb.method == Request.Method.POST ||
+         (rb.method == Request.Method.DELETE && !TextUtils.isEmpty(rb.content))) {
 
          if (!TextUtils.isEmpty(rb.content)) { // string content, e.g. json
             final byte[] bytes = rb.content.getBytes("UTF-8");

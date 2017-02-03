@@ -78,6 +78,10 @@ public abstract class OAuth2Account extends Account {
       accessToken = auth.access_token;
    }
 
+   public String getAccessToken() {
+      return accessToken;
+   }
+
    public static void fromJSON(OAuth2Account account, JSONObject json) {
       Account.fromJSON(account, json);
       account.accessToken = json.optString("accessToken", "");
