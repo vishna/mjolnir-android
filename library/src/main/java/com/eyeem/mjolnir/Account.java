@@ -133,7 +133,7 @@ public abstract class Account implements Serializable {
       save(context, accounts);
    }
 
-   protected void save(Context context, HashSet<Account> accounts) {
+   public static void save(Context context, HashSet<Account> accounts) {
       JSONArray accountsJSONArray = new JSONArray();
       for (Account account : accounts) {
          try {
