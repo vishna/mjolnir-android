@@ -1,11 +1,10 @@
-class ProjectSettings{
-    int compileSdk = 23
-    int targetSdk = 23
-    int minSdk = 14
-    String buildTools = '23.0.0'
-    String androidPlugin = 'com.android.tools.build:gradle:1.5.0'
+ext {
+    compile_sdk = 25
+    target_sdk = 25
+    min_sdk = 14
+    build_tools = '25.0.3'
+    compat_version = '25.4.0'
 }
-project.extensions.create("ver", ProjectSettings)
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.9'
@@ -15,7 +14,13 @@ buildscript {
     repositories {
         jcenter()
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0-rc1'
+//    dependencies {
+//        classpath 'com.android.tools.build:gradle:3.0.0-alpha9'
+//    }
+}
+
+allprojects {
+    repositories {
+        google()
     }
 }

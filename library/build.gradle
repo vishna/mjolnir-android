@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath project.ver.androidPlugin
+        classpath "com.android.tools.build:gradle:${ANDROID_PLUGIN}"
     }
 }
 
@@ -18,7 +18,7 @@ dependencies {
         mavenLocal()
     }
 
-    compile 'com.android.support:support-v4:18.0.+'
+    compile "com.android.support:support-v4:${compat_version}"
 
     compile 'com.mcxiaoke.volley:library:1.0.10'
 
@@ -49,8 +49,8 @@ task generateSources {
 }
 
 android {
-    compileSdkVersion project.ver.compileSdk
-    buildToolsVersion project.ver.buildTools
+    compileSdkVersion compile_sdk
+    buildToolsVersion build_tools
 //    minSdkVersion project.ver.minSdk
 
     lintOptions {
