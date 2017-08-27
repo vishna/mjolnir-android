@@ -4,6 +4,7 @@ ext {
     min_sdk = 14
     build_tools = '25.0.3'
     compat_version = '25.4.0'
+    volley_version = '1.0.19'
 }
 
 task wrapper(type: Wrapper) {
