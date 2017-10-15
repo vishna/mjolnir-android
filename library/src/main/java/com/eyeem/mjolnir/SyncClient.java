@@ -6,8 +6,8 @@ import android.util.Log;
 import com.android.volley.Request;
 import com.squareup.mimecraft.Multipart;
 import com.squareup.mimecraft.Part;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.OkUrlFactory;
+
+
 
 import org.json.JSONObject;
 
@@ -29,6 +29,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.zip.GZIPInputStream;
 
 import javax.net.ssl.SSLContext;
+
+import okhttp3.OkHttpClient;
+import okhttp3.OkUrlFactory;
 
 /**
  * Created by vishna on 22/11/13.
@@ -148,10 +151,11 @@ public class SyncClient {
 
    protected HttpURLConnection buildConnection() throws IOException {
       URL url = new URL(rb.toUrl());
-      OkHttpClient client = new OkHttpClient();
-      client.setConnectTimeout(timeout == null ? Constants.CONNECTION_TIMEOUT_IN_SEC : timeout, TimeUnit.SECONDS);
-      client.setReadTimeout(timeout == null ? Constants.CONNECTION_TIMEOUT_IN_SEC : timeout, TimeUnit.SECONDS);
-      HttpURLConnection connection = new OkUrlFactory(client).open(url);
+      OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder();
+      clientBuilder.connectTimeout(timeout == null ? Constants.CONNECTION_TIMEOUT_IN_SEC : timeout, TimeUnit.SECONDS);
+      clientBuilder.readTimeout(timeout == null ? Constants.CONNECTION_TIMEOUT_IN_SEC : timeout, TimeUnit.SECONDS);
+      clientBuilder.writeTimeout(timeout == null ? Constants.CONNECTION_TIMEOUT_IN_SEC : timeout, TimeUnit.SECONDS);
+      HttpURLConnection connection = new OkUrlFactory(clientBuilder.build()).open(url);
 
       connection.setRequestProperty("Accept-Encoding", "gzip");
       connection.setRequestMethod(rb.method());

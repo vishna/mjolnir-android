@@ -24,9 +24,9 @@ dependencies {
     compile "com.mcxiaoke.volley:library:${volley_version}"
 
     compile 'com.eyeem.potato:library:0.9.2.6-SNAPSHOT@aar'
-    compile 'com.squareup.okhttp:okhttp:2.4.0'
-    compile 'com.squareup.okhttp:okhttp-urlconnection:2.4.0'
-    compile 'com.squareup.okio:okio:1.5.0'
+    compile 'com.squareup.okhttp3:okhttp:3.9.0'
+    compile 'com.squareup.okhttp3:okhttp-urlconnection:3.9.0'
+    compile 'com.squareup.okio:okio:1.13.0'
     compile 'com.squareup.mimecraft:mimecraft:1.1.0'
     compile 'com.evernote:android-job:1.1.0'
     compile 'com.esotericsoftware.kryo:kryo:2.20'
@@ -52,7 +52,7 @@ task generateSources {
 android {
     compileSdkVersion compile_sdk
     buildToolsVersion build_tools
-//    minSdkVersion project.ver.minSdk
+    useLibrary  'org.apache.http.legacy'
 
     lintOptions {
         abortOnError false

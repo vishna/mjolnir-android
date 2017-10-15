@@ -2,7 +2,7 @@ ext {
     compile_sdk = 25
     target_sdk = 25
     min_sdk = 14
-    build_tools = '25.0.3'
+    build_tools = '26.0.2'
     compat_version = '25.4.0'
     volley_version = '1.0.19'
 }
