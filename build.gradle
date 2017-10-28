@@ -7,10 +7,6 @@ ext {
     volley_version = '1.0.19'
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '1.9'
-}
-
 buildscript {
     repositories {
         google()
